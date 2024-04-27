@@ -19,15 +19,18 @@ db.once('open', function() {
 });
 
 
-const userSchema = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
   name: String,
   email: String,
+  movie: String,
   review: String,
   recommend: String
 
 });
 
-const User = mongoose.model('User', userSchema);
+const review = mongoose.model('Review', reviewSchema);
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
