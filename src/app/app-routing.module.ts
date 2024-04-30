@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//import { ListComponent } from './list/list.component';
-//import { ReviewComponent } from './review/review.component';
+import { ListComponent } from './list/list.component';
+import { ReviewComponent } from './review/review.component';
 import { Component } from '@angular/core';
 
-/*const routes: Routes = [
+const routes: Routes = [
  { path: 'list', component: ListComponent },
  { path: '', component: ReviewComponent },
 ];
@@ -14,4 +14,4 @@ import { Component } from '@angular/core';
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-*/
+
