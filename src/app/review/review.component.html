@@ -1,0 +1,26 @@
+<div>
+  <h1>What did you think of Rush Hour (1998, dir. Brett Ratner)?</h1>
+  <div>
+    <label>
+      <input type="checkbox" name="anonymous" [(ngModel)]="isAnonymous"> Anonymous
+    </label>
+
+    <div *ngIf="!isAnonymous">
+      <label>
+        name
+        <input type="text" name="username" [(ngModel)]="username" required>
+      </label>
+    </div>
+  </div>
+  <div>
+    <img class="star-icon" *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index"
+         [src]="getStarIconSrc(i)"
+         (click)="onStarClicked(i)">
+  <div>
+    <label>comments</label><br>
+    <textarea matInput name="" id="" cols="30" rows="6" [(ngModel)]="content"></textarea>
+  </div>
+  <button mat-raised-button
+  color="primary"
+  (click)="onAddPost()">Add Review</button>
+</div>

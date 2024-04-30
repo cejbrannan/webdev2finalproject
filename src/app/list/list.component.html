@@ -1,0 +1,14 @@
+<mat-accordion displayMode="default" [multi]="true"
+               [hideToggle]="false" *ngIf="reviews.length > 0">
+    <mat-expansion-panel [hideToggle]="false" *ngFor="let review of reviews">
+        <mat-expansion-panel-header>
+          {{ getDisplayedUsername(review) }}
+        </mat-expansion-panel-header>
+        <img class="star-icon" *ngFor="let star of getStarIcons(review.rating)" [src]="star">
+        <p>{{review.content}}</p>
+        <mat-action-row>
+
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body" *ngIf="reviews.length <=0 "> No reviews yet</p>
