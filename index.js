@@ -42,6 +42,43 @@ app.get('/api/reviews', (req, res) => {
     .catch(err => res.status(500).json({ message: 'Failed to fetch reviews', error: err }));
 });
 
+// route to delete a review
+app.delete('/api/reviews/:id', (req, res) => {
+  const postId = req.params.id;
+
+  review.findOneAndDelete({_id: postId})
+    .then(deletedPost => {
+      if (!deletedPost)
+      {
+        return res.status(404).json({ message: 'Review not found '});
+      }
+      res.status(204).end();
+    })
+    .catch(err => {
+      console.error('Error deleting post:', err);
+      res.status(500).json({ message: 'Failed to delete post', error: err});
+    });
+});
+
+
+// route to update/edit a review
+app.put('/api/reviews/:id', (req, res) => {
+  const reviewId = req.params.id;
+  const updatedReviewPost = req.content;
+  const updatedReviewRating = req.rating;
+
+  review.findByIdAndUpdate(reviewId, updatedReviewPost, updatedReviewRating, {new: true})
+    .then(updatedReview => {
+      if (!updatedReview) {
+        return res.status(404).json({ message: 'Review not found' });
+      }
+      res.json(updatedReview);
+    })
+    .catch(err => {
+      console.error('Error updating review:', err);
+      res.status(500).json({ message: 'Failed to update review', err});
+    });
+});
 
 
 const PORT = process.env.PORT || 3000;
