@@ -1,26 +1,52 @@
-<div>
-  <h1>What did you think of Rush Hour (1998, dir. Brett Ratner)?</h1>
-  <div>
-    <label>
-      <input type="checkbox" name="anonymous" [(ngModel)]="isAnonymous"> Anonymous
-    </label>
+<div class = "review-component">
 
-    <div *ngIf="!isAnonymous">
-      <label>
-        name
-        <input type="text" name="username" [(ngModel)]="username" required>
-      </label>
+
+  <img class = "banner" src = "assets/screencap.png">
+
+
+<div class = "body-content">
+
+  <div class = "left">
+    <img class = "rushhour" src = "assets/rush_hour.jpeg">
+  </div>
+
+  <div class = "right">
+
+    <p class = "heading">What did you think of... </p>
+    <h1><span class = "title">Rush Hour</span> (1998, dir. Brett Ratner)</h1>
+
+    <div class = "review-container">
+
+      <div class = "anonymous">
+        <label class = "checkbox">
+          <input type="checkbox" name="anonymous" [(ngModel)]="isAnonymous"> Post anonymously
+        </label>
+
+        <div  *ngIf="!isAnonymous">
+          <label>
+            <p class = "label">Name:</p>
+            <input class = "text-area" type="text" name="username" [(ngModel)]="username" required>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <img class="star-icon" *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index"
+            [src]="getStarIconSrc(i)"
+            (click)="onStarClicked(i)">
+      <div>
+        <textarea class = "text-area" placeholder="Write your review..." name="" id="" cols="30" rows="6" [(ngModel)]="content"></textarea>
+      </div>
+
+      <button class="button" mat-raised-button
+      color="primary"
+      (click)="onAddPost()">Add Review</button>
+
     </div>
+
   </div>
-  <div>
-    <img class="star-icon" *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index"
-         [src]="getStarIconSrc(i)"
-         (click)="onStarClicked(i)">
-  <div>
-    <label>comments</label><br>
-    <textarea matInput name="" id="" cols="30" rows="6" [(ngModel)]="content"></textarea>
-  </div>
-  <button mat-raised-button
-  color="primary"
-  (click)="onAddPost()">Add Review</button>
+
+  
+</div>
+
 </div>

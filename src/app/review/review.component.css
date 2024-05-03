@@ -1,0 +1,105 @@
+p{
+    font-size: 25px;
+}
+
+.heading{
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.review-component {
+    width: 100%;
+    background-color: rgb(88, 88, 88);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    
+    min-height: 100vh;
+    padding-bottom: 10px;
+}
+  
+.banner {
+    width: 35%;
+    margin: 0 auto; 
+
+}
+
+.rushhour{
+    width: 200px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    padding-left: 50px;
+}
+
+.title{
+    color: #f3f3f3;
+    font-family: 'Calisto MT';
+    font-size: 60px;
+
+}
+
+.anonymous{
+    padding-bottom: 10px;
+}
+
+.checkbox{
+    font-size: 20px;
+}
+
+.label {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.text-area{
+    background-color: #333;
+    color: #f3f3f3;
+    padding: .5em;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+.star-icon{
+    width:22px;
+    padding-bottom: 10px;
+}
+
+.body-content{
+    display: flex;
+    justify-content: center; 
+
+
+    color: #bababa;
+    font-family: 'Gill Sans';
+
+    padding-left: 20px;
+}
+
+.button{
+    background-color: #f3f3f3; /* Green */
+    border-radius: 5px;
+    border: none;
+    color: #333;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #333;
+    color: white;
+}

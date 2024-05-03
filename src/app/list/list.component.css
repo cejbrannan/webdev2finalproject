@@ -1,0 +1,58 @@
+.body-content{
+    width: 100%;
+    background-color: rgb(88, 88, 88);
+    display: flex;
+    justify-content: center; 
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto; 
+
+    font-family: 'Gill Sans';
+    color: #f3f3f3;
+
+    padding-top: 100px;
+}
+
+h1 {
+    font-family: 'Calisto MT';
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.rushhour{
+    width: 200px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    padding-left: 50px;
+}
+
+.username{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.review{
+    margin-bottom: 10px;
+    background-color: #333;
+    padding:5px 20px;
+    border-radius: 10px;
+}
+
+.review-content{
+    font-family: 'Courier New';
+    font-size: 15px;
+}
+
+.info-text{
+    font-weight: bold;
+    font-size: 15px;
+
+    background-color: #333;
+    padding:5px 20px;
+    border-radius: 10px;
+}

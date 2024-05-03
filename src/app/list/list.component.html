@@ -1,14 +1,35 @@
-<mat-accordion displayMode="default" [multi]="true"
+<div class = "body-content">
+  <div class = "left">
+    <img class = "rushhour" src = "assets/rush_hour.jpeg">
+  </div>
+  
+  <div class = "right">
+    
+    <h1>Reviews</h1>
+    <mat-accordion displayMode="default" [multi]="true"
                [hideToggle]="false" *ngIf="reviews.length > 0">
-    <mat-expansion-panel [hideToggle]="false" *ngFor="let review of reviews">
-        <mat-expansion-panel-header>
-          {{ getDisplayedUsername(review) }}
-        </mat-expansion-panel-header>
-        <img class="star-icon" *ngFor="let star of getStarIcons(review.rating)" [src]="star">
-        <p>{{review.content}}</p>
-        <mat-action-row>
+      <mat-expansion-panel [hideToggle]="false" *ngFor="let review of reviews">
+          <div class = "review">
+            <div class = "review-head">
+                <mat-expansion-panel-header class = "username">
+                {{ getDisplayedUsername(review) }}  
+                </mat-expansion-panel-header>
+              <img class="star-icon" *ngFor="let star of getStarIcons(review.rating)" [src]="star">
+            </div>
+            <div class = "review-content">
+              <p>{{review.content}}</p>
+            </div>
+          </div>
+          
+          
+          <mat-action-row>
 
-        </mat-action-row>
-    </mat-expansion-panel>
-</mat-accordion>
-<p class="info-text mat-body" *ngIf="reviews.length <=0 "> No reviews yet</p>
+          </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+    <p class="info-text mat-body" *ngIf="reviews.length <=0 "> No reviews yet</p>
+
+  </div>
+  
+</div>
