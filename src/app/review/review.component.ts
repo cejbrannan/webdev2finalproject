@@ -2,7 +2,6 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { PostService } from '../post.service';
 
 @Component({
-  selector: 'app-review',
   templateUrl: './review.component.html',
   styleUrl: './review.component.css'
 })
